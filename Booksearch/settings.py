@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'booksearch',
+    'django.contrib.postgres',
 ]
 
 MIDDLEWARE = [
@@ -75,12 +76,24 @@ WSGI_APPLICATION = 'Booksearch.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'booksearch',
+            'USER': 'django',
+            'PASSWORD': 'django',
+            'HOST': 'localhost',
+            'POSRT': '',
+
+        }
     }
-}
 
 
 # Password validation
@@ -120,3 +133,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
+
+LOGIN_REDIRECT_URL = 'search-form'
+LOGOUT_REDIRECT_URL = 'search-form'
+
+#SMTP settings
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "S1sat@yandex.ru"
+EMAIL_HOST_PASSWORD = "4437"
+EMAIL_USE_SSL = True
+EMAIL_SUBJECT = "BookSearch service. Searching results."
+
+#Allow to send email to admins in case of any problems
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+###  DJANGO LOGGING

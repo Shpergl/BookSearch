@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}
+    Search Starts
+{% endblock %}
+
+{% block content %}
+
+    <h4>Starting to search...</h4>
+    <h5>Interested word is:</h5>{{ word }}
+    <h5>Will be send to email:</h5> {{ email }}
+
+{% endblock %}

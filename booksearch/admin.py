@@ -1,4 +1,8 @@
 from django.contrib import admin
 
-#admin.site.register([Event])
+from booksearch.models import Book, Page, Section
+
+admin.site.register([Book])
+admin.site.register([Section])
+admin.site.register([Page])
 

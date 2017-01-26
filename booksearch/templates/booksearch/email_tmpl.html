@@ -1,0 +1,8 @@
+Hello, {{ user }}.
+This message was send by BookSearch service.
+Results of searching word "{{ text }}" are:
+{% for word in result %}
+    Book: {{ word.book }}
+    Section: {{ word.section }}
+    Page: {{ word.id }}
+{% endfor %}

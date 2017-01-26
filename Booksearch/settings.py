@@ -146,8 +146,8 @@ LOGOUT_REDIRECT_URL = 'search-form'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = "S1sat@yandex.ru"
-EMAIL_HOST_PASSWORD = "4437"
+EMAIL_HOST_USER = "EMAIL" #Set here your email for sending mails.
+EMAIL_HOST_PASSWORD = "PASS" #Set here your password for Email Account
 EMAIL_USE_SSL = True
 EMAIL_SUBJECT = "BookSearch service. Searching results."
 
